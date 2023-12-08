@@ -69,6 +69,7 @@ class ItemViewFragment : Fragment() {
             foodPriceTv.text = "${foodModel.foodPrice}$"
         }
     }
+
     private fun showToastManager(massage: String) {
         Snackbar.make(
             binding.root,

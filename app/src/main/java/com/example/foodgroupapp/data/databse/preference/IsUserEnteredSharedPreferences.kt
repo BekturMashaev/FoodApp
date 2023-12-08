@@ -17,6 +17,7 @@ class IsUserEnteredSharedPreferences(
     }
 
     fun setUserFirstEntrance(userFirstEntrance: Boolean) {
-        sharedPreferences.edit().putBoolean(SHARED_PREFERENCES_IS_ENTERED_KEY, userFirstEntrance).apply()
+        sharedPreferences.edit().putBoolean(SHARED_PREFERENCES_IS_ENTERED_KEY, userFirstEntrance)
+            .apply()
     }
 }
