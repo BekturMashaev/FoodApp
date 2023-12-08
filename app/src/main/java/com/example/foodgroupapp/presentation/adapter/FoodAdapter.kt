@@ -1,7 +1,6 @@
 package com.example.foodgroupapp.presentation.adapter
 
 import android.annotation.SuppressLint
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -11,8 +10,7 @@ import com.example.foodgroupapp.data.databse.models.FoodModel
 import com.example.foodgroupapp.databinding.FoodItemBinding
 
 class FoodAdapter(
-    private val listener: ItemCLickListener,
-    private val context:Context
+    private val listener: ItemCLickListener
 ) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
     private var foodList = mutableListOf<FoodModel>()
 
@@ -33,9 +31,9 @@ class FoodAdapter(
                 itemCv.setOnClickListener {
                     listener.onFoodItemClick(foodModel)
                 }
-                Glide.with(context).load(foodModel.foodImage).into(foodIv)
-                cartItemIv.setOnClickListener{
-                    listener.onSendItemClick(foodModel)
+                Glide.with(root).load(foodModel.foodImage).into(foodIv)
+                cartItemIv.setOnClickListener {
+                    listener.onIconClick(foodList.indexOf(foodModel))
                 }
             }
         }

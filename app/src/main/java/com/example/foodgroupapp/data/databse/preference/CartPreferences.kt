@@ -8,8 +8,9 @@ import java.lang.reflect.Type
 
 private const val SHARED_PREFERENCES_KEY = "SHARED_PREFERENCES_KEY"
 private const val SHARED_PREFERENCES_IN_CART = "SHARED_PREFERENCES_IN_CART"
+
 class CartPreferences(
-    private val context:Context
+    private val context: Context
 ) {
     private val sharedPreferences = context.getSharedPreferences(
         SHARED_PREFERENCES_KEY, Context.MODE_PRIVATE
@@ -22,6 +23,7 @@ class CartPreferences(
         val foodList = gson.fromJson<ArrayList<FoodModel>>(json, type)
         return foodList ?: emptyList()
     }
+
     fun saveFood(foodModel: FoodModel) {
         val food = getAllFood().toMutableList()
         food.add(0, foodModel)
@@ -30,6 +32,7 @@ class CartPreferences(
             SHARED_PREFERENCES_IN_CART, foodGson
         ).apply()
     }
+
     fun deleteFoodByIndex(index: Int) {
         val getAllFood = getAllFood().toMutableList()
         if (index in 0 until getAllFood.size) {
@@ -38,7 +41,8 @@ class CartPreferences(
             sharedPreferences.edit().putString(SHARED_PREFERENCES_IN_CART, foodGsonString).apply()
         }
     }
-    fun deleteAllFood(){
+
+    fun deleteAllFood() {
         sharedPreferences.edit().clear().apply()
     }
 }

@@ -10,21 +10,17 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.example.foodgroupapp.R
 import com.example.foodgroupapp.data.databse.models.FoodModel
-import com.example.foodgroupapp.data.databse.preference.CartPreferences
-import com.example.foodgroupapp.data.databse.preference.IsUserEnteredSharedPreferences
 import com.example.foodgroupapp.databinding.FragmentHomeScreenBinding
 import com.example.foodgroupapp.presentation.adapter.FoodAdapter
 import com.example.foodgroupapp.presentation.adapter.ItemCLickListener
+import com.google.android.material.snackbar.Snackbar
 
 class HomeScreenFragment : Fragment(), ItemCLickListener {
     private val binding: FragmentHomeScreenBinding by lazy {
         FragmentHomeScreenBinding.inflate(layoutInflater)
     }
     private val adapter: FoodAdapter by lazy {
-        FoodAdapter(this,requireContext())
-    }
-    private val sharedPreferences: CartPreferences by lazy {
-        CartPreferences(requireContext())
+        FoodAdapter(this)
     }
     private lateinit var viewModel: HomeScreenViewModel
     override fun onCreateView(
@@ -41,7 +37,7 @@ class HomeScreenFragment : Fragment(), ItemCLickListener {
         )[HomeScreenViewModel::class.java]
         setUpStatusColors()
         setUpDataListener()
-        binding.cartIv.setOnClickListener{
+        binding.cartIv.setOnClickListener {
             findNavController().navigate(
                 R.id.action_homeScreenFragment_to_cartScreenFragment
             )
@@ -66,10 +62,8 @@ class HomeScreenFragment : Fragment(), ItemCLickListener {
         )
     }
 
-    override fun onSendItemClick(foodModel: FoodModel) {
-        val forTime=sharedPreferences.getAllFood()
-        if (foodModel in forTime)null
-        else sharedPreferences.saveFood(foodModel)
+    override fun onIconClick(index: Int) {
+        TODO("Not yet implemented")
     }
 
     companion object {

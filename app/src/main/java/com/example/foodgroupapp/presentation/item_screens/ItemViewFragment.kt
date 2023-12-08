@@ -10,12 +10,17 @@ import androidx.navigation.fragment.findNavController
 import com.bumptech.glide.Glide
 import com.example.foodgroupapp.R
 import com.example.foodgroupapp.data.databse.models.FoodModel
+import com.example.foodgroupapp.data.databse.preference.CartPreferences
 import com.example.foodgroupapp.databinding.FragmentItemViewBinding
 import com.example.foodgroupapp.presentation.home_screen.HomeScreenFragment
+import com.google.android.material.snackbar.Snackbar
 
 class ItemViewFragment : Fragment() {
     private val binding by lazy {
         FragmentItemViewBinding.inflate(layoutInflater)
+    }
+    private val sharedPreferences: CartPreferences by lazy {
+        CartPreferences(requireContext())
     }
 
     override fun onCreateView(
@@ -30,7 +35,16 @@ class ItemViewFragment : Fragment() {
         backPressedDispatcher()
         val foodModel = arguments?.getSerializable(HomeScreenFragment.FOOD_KEY) as? FoodModel
         foodModel?.let { setUpViews(it) }
+        toSendToCart(foodModel)
         setUpStatusColors()
+    }
+
+    private fun toSendToCart(foodModel: FoodModel?) {
+        binding.toCartBtn.setOnClickListener {
+            val forTime = sharedPreferences.getAllFood()
+            if (foodModel in forTime) showToastManager("This food is already in cart!")
+            else foodModel?.let { it1 -> sharedPreferences.saveFood(it1) }
+        }
     }
 
     private fun backPressedDispatcher() {
@@ -38,6 +52,7 @@ class ItemViewFragment : Fragment() {
             findNavController().popBackStack()
         }
     }
+
     private fun setUpStatusColors() {
         requireActivity().window?.statusBarColor = resources.getColor(R.color.white)
         requireActivity().window?.navigationBarColor = resources.getColor(R.color.white)
@@ -50,5 +65,12 @@ class ItemViewFragment : Fragment() {
             foodDescriptionText.text = foodModel.foodDescription
             foodPriceTv.text = "${foodModel.foodPrice}$"
         }
+    }
+    private fun showToastManager(massage: String) {
+        Snackbar.make(
+            binding.root,
+            massage,
+            Snackbar.LENGTH_SHORT,
+        ).show()
     }
 }

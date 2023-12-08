@@ -39,5 +39,9 @@
         android:id="@+id/cartScreenFragment"
         android:name="com.example.foodgroupapp.presentation.cart.CartScreenFragment"
         android:label="fragment_cart_screen"
-        tools:layout="@layout/fragment_cart_screen" />
+        tools:layout="@layout/fragment_cart_screen" >
+        <action
+            android:id="@+id/action_cartScreenFragment_to_itemViewFragment"
+            app:destination="@id/itemViewFragment" />
+    </fragment>
 </navigation>
