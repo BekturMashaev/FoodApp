@@ -44,6 +44,7 @@ class ItemViewFragment : Fragment() {
             val forTime = sharedPreferences.getAllFood()
             if (foodModel in forTime) showToastManager("This food is already in cart!")
             else foodModel?.let { it1 -> sharedPreferences.saveFood(it1) }
+            findNavController().popBackStack()
         }
     }
 

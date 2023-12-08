@@ -1,61 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="340dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    app:cardCornerRadius="15dp"
-    android:layout_marginTop="20dp"
     android:id="@+id/itemCv"
-    android:layout_height="152dp">
+    android:layout_width="340dp"
+    android:layout_height="152dp"
+    android:layout_marginTop="20dp"
+    app:cardCornerRadius="15dp">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:orientation="horizontal"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
         <LinearLayout
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="12dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="10dp"
             android:orientation="vertical">
+
             <TextView
                 android:id="@+id/foodNameTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/roboto_bold"
                 android:text="@string/food_title"
-                android:textSize="18sp"
-                android:fontFamily="@font/roboto_bold"/>
+                android:textSize="18sp" />
+
             <TextView
                 android:id="@+id/descriptionTxt"
-                android:layout_marginTop="15dp"
                 android:layout_width="150dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
                 android:text="@string/food_description"
-                android:textSize="13sp"
-                android:textColor="@color/text_item_color"/>
+                android:textColor="@color/text_item_color"
+                android:textSize="13sp" />
+
             <TextView
                 android:id="@+id/priceTxt"
                 android:layout_width="wrap_content"
-                android:layout_marginTop="15dp"
                 android:layout_height="wrap_content"
-                android:text="@string/food_price"
-                android:textSize="18sp"
+                android:layout_marginTop="15dp"
                 android:fontFamily="@font/roboto_bold"
-                android:textColor="@color/price_item_color"/>
+                android:text="@string/food_price"
+                android:textColor="@color/price_item_color"
+                android:textSize="18sp" />
         </LinearLayout>
-        <ImageView
-            android:id="@+id/foodIv"
-            android:layout_width="85dp"
-            android:layout_height="85dp"
-            android:layout_gravity="center"
-            android:scaleType="centerCrop"
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="90dp"
+            android:layout_height="90dp"
             android:layout_marginStart="50dp"
-            android:src="@drawable/cake_image"/>
+            android:layout_gravity="center"
+            app:cardCornerRadius="10dp">
+            <ImageView
+                android:id="@+id/foodIv"
+                android:scaleType="centerCrop"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/cake_image" />
+        </androidx.cardview.widget.CardView>
 
         <ImageView
             android:id="@+id/cartItemIv"
-            android:layout_width="19dp"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:layout_marginEnd="18dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
             android:src="@drawable/like_icon" />
     </LinearLayout>
 

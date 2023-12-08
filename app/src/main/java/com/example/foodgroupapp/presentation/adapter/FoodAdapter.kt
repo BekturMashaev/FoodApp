@@ -3,6 +3,7 @@ package com.example.foodgroupapp.presentation.adapter
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.foodgroupapp.R
@@ -10,8 +11,7 @@ import com.example.foodgroupapp.data.databse.models.FoodModel
 import com.example.foodgroupapp.databinding.FoodItemBinding
 
 class FoodAdapter(
-    private val listener: ItemCLickListener,
-    private val isCart:Boolean
+    private val listener: ItemCLickListener, private val isCart: Boolean
 ) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
     private var foodList = mutableListOf<FoodModel>()
 
@@ -33,11 +33,12 @@ class FoodAdapter(
                     itemCv.setOnClickListener {
                         listener.onFoodItemClick(foodModel)
                     }
+                    cartItemIv.setImageResource(R.drawable.delete_item_icon)
                     Glide.with(root).load(foodModel.foodImage).into(foodIv)
                     cartItemIv.setOnClickListener {
                         listener.onIconClick(foodList.indexOf(foodModel))
                     }
-                }else{
+                } else {
                     foodNameTxt.text = foodModel.foodName
                     descriptionTxt.text = foodModel.foodDescription
                     priceTxt.text = "${foodModel.foodPrice}$"
