@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FoodGroupApp</string>
+    <string name="app_name">FoodApp</string>
     <string name="sweet_ordering_app_name">Sweets Ordering App</string>
     <string name="sweet_ordering_screen_button_txt">Get Started</string>
     <string name="all_txt">All</string>
