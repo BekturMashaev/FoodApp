@@ -66,6 +66,7 @@ class CartScreenFragment : Fragment(), ItemCLickListener {
         }
         binding.deleteIv.setOnClickListener{
             sharedPreferences.deleteAllFood()
+            setUpViewsAndAdapter()
         }
     }
 }
