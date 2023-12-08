@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">FoodGroupApp</string>
+    <string name="sweet_ordering_app_name">Sweets Ordering App</string>
+    <string name="sweet_ordering_screen_button_txt">Get Started</string>
+    <string name="all_txt">All</string>
+    <string name="food_title">Cup Cake</string>
+    <string name="food_description">Flavoured cupcakes with special icing</string>
+    <string name="food_price">5$</string>
+    <string name="sweets_txt">Sweets</string>
+    <string name="cakes_txt">Cakes</string>
+    <string name="donuts_txt">Donuts</string>
+    <string name="to_cart">To Cart</string>
+    <string name="about_product">About this product</string>
+    <string name="product_description">Flavoured cupcakes with special icing, Flavoured cupcakes.</string>
+    <string name="donuts_description_txt">Flavoured cupcakes with special icing</string>
+    <string name="candey_txt">Candey</string>
+    <string name="sweet_ordering_app_description">Order your favorite desert
+                   Here!</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>

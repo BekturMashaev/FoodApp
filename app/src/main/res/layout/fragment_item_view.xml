@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".presentation.item_screens.ItemViewFragment">
+
+    <ImageView
+        android:id="@+id/backIv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/back_line"
+        android:layout_marginTop="5dp"
+        android:layout_marginStart="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/foodPicture"
+        android:layout_width="397dp"
+        android:layout_height="245dp"
+        android:layout_marginTop="21dp"
+        android:layout_marginHorizontal="25dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/donuts_picture"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/backIv" />
+
+    <LinearLayout
+        android:id="@+id/foodTextLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodPicture">
+
+        <TextView
+            android:id="@+id/foodNameTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/donuts_txt"
+            android:textColor="@color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/foodDescriptionText"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/donuts_description_txt"
+            android:textColor="@color/text_item_color"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/foodProductTextLl"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="40dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodTextLl">
+
+        <TextView
+            android:id="@+id/aboutProgram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/about_product"
+            android:textColor="@color/black"
+            android:textSize="18sp" />
+
+        <TextView
+            android:layout_width="210dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_medium"
+            android:text="@string/product_description"
+            android:textColor="@color/text_item_color"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cardFoodPrice"
+        android:layout_width="72dp"
+        android:layout_height="45dp"
+        app:cardBackgroundColor="@color/on_boarding_screen_button_color"
+        app:layout_constraintBottom_toTopOf="@+id/foodProductTextLl"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:shapeAppearanceOverlay="@style/MaterialCardStyle"
+        app:layout_constraintTop_toBottomOf="@+id/foodTextLl" >
+        <TextView
+            android:id="@+id/foodPriceTv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            tools:text="5$"/>
+    </com.google.android.material.card.MaterialCardView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foodProductTextLl" >
+        <FrameLayout
+            android:layout_marginEnd="10dp"
+            android:id="@+id/minusFl"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ellipse"/>
+            <View
+                android:layout_width="22dp"
+                android:layout_height="4dp"
+                android:background="@color/white"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+        <FrameLayout
+            android:id="@+id/plusFl"
+            android:layout_marginEnd="10dp"
+            android:layout_width="44dp"
+            android:layout_height="44dp"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/ellipse"/>
+            <View
+                android:layout_width="22dp"
+                android:layout_height="4dp"
+                android:background="@color/white"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="center"/>
+            <View
+                android:layout_width="4dp"
+                android:layout_height="22dp"
+                android:background="@color/white"
+                android:layout_marginBottom="2dp"
+                android:layout_gravity="center"/>
+        </FrameLayout>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/toCartBtn"
+        android:layout_width="352dp"
+        android:layout_height="75dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="20dp"
+        android:backgroundTint="@color/button_to_cart_color"
+        android:fontFamily="@font/roboto_bold"
+        android:text="@string/to_cart"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

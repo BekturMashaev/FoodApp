@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="on_boarding_screen_background">#2F2E41</color>
+    <color name="on_boarding_screen_button_color">#fbb395</color>
+    <color name="home_screen_color">#f9b69b</color>
+    <color name="text_item_color">#888888</color>
+    <color name="price_item_color">#5AA72B</color>
+    <color name="button_to_cart_color">#3F3D56</color>
+    <color name="text_home_color">#ca7f61</color>
+    <color name="buttons_color">#fcd5c5</color>
+</resources>

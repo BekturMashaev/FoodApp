@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="340dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="15dp"
+    android:layout_marginTop="20dp"
+    android:id="@+id/itemCv"
+    android:layout_height="152dp">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+            <TextView
+                android:id="@+id/foodNameTxt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/food_title"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_bold"/>
+            <TextView
+                android:id="@+id/descriptionTxt"
+                android:layout_marginTop="15dp"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="@string/food_description"
+                android:textSize="13sp"
+                android:textColor="@color/text_item_color"/>
+            <TextView
+                android:id="@+id/priceTxt"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="15dp"
+                android:layout_height="wrap_content"
+                android:text="@string/food_price"
+                android:textSize="18sp"
+                android:fontFamily="@font/roboto_bold"
+                android:textColor="@color/price_item_color"/>
+        </LinearLayout>
+        <ImageView
+            android:id="@+id/foodIv"
+            android:layout_width="85dp"
+            android:layout_height="85dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="50dp"
+            android:src="@drawable/cake_image"/>
+
+        <ImageView
+            android:id="@+id/cartItemIv"
+            android:layout_width="19dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="18dp"
+            android:src="@drawable/like_icon" />
+    </LinearLayout>
+
+</androidx.cardview.widget.CardView>
