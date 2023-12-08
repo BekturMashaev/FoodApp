@@ -7,13 +7,13 @@ fun foodFakeData() = listOf<FoodModel>(
         foodName = "Cup Cake",
         foodDescription = "Flavoured cupcakes with special icing",
         foodPrice = 5,
-        foodImage = "https://leitesculinaria.com/wp-content/uploads/2021/10/classic-vanilla-cupcakes-1.jpg",
+        foodImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg2gvFMmqqdx8gtpZfrzBVJsW8ppYFEsLNJfb9QPL2fHIvQa4nzH0FFEYOiHC9AnRcWN8&usqp=CAU",
     ),
     FoodModel(
         foodName = "Donut",
         foodDescription = "Flavoured cupcakes with special icing",
         foodPrice = 3,
-        foodImage = "https://socialrevelry.com/cdn/shop/products/ScreenShot2021-05-14at11.59.06AM_800x.png?v=1621008032",
+        foodImage = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQg2gvFMmqqdx8gtpZfrzBVJsW8ppYFEsLNJfb9QPL2fHIvQa4nzH0FFEYOiHC9AnRcWN8&usqp=CAU",
     ),
     FoodModel(
         foodName = "Macaron",

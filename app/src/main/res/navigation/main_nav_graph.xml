@@ -14,7 +14,9 @@
             android:id="@+id/action_welcomeScreenFragment_to_homeScreenFragment"
             app:destination="@id/homeScreenFragment"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out" />
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
     </fragment>
     <fragment
         android:id="@+id/homeScreenFragment"
@@ -25,10 +27,16 @@
             android:id="@+id/action_homeScreenFragment_to_itemViewFragment"
             app:destination="@id/itemViewFragment"
             app:enterAnim="@anim/slide_in"
-            app:exitAnim="@anim/slide_out" />
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
         <action
             android:id="@+id/action_homeScreenFragment_to_cartScreenFragment"
-            app:destination="@id/cartScreenFragment" />
+            app:destination="@id/cartScreenFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
     </fragment>
     <fragment
         android:id="@+id/itemViewFragment"
@@ -42,6 +50,10 @@
         tools:layout="@layout/fragment_cart_screen" >
         <action
             android:id="@+id/action_cartScreenFragment_to_itemViewFragment"
-            app:destination="@id/itemViewFragment" />
+            app:destination="@id/itemViewFragment"
+            app:enterAnim="@anim/slide_in"
+            app:exitAnim="@anim/slide_out"
+            app:popEnterAnim="@anim/slide_in"
+            app:popExitAnim="@anim/slide_out" />
     </fragment>
 </navigation>

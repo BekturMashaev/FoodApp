@@ -21,7 +21,7 @@ class CartScreenFragment : Fragment(), ItemCLickListener {
         CartPreferences(requireContext())
     }
     private val adapter: FoodAdapter by lazy {
-        FoodAdapter(this,)
+        FoodAdapter(this, true)
     }
     private val binding by lazy {
         FragmentCartScreenBinding.inflate(layoutInflater)
@@ -37,7 +37,7 @@ class CartScreenFragment : Fragment(), ItemCLickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         setUpViewsAndAdapter()
-        backPressedDispatcher()
+        buttonsAndDispatchers()
     }
 
     private fun setUpViewsAndAdapter() {
@@ -56,9 +56,16 @@ class CartScreenFragment : Fragment(), ItemCLickListener {
         sharedPreferences.deleteFoodByIndex(index)
         setUpViewsAndAdapter()
     }
-    private fun backPressedDispatcher() {
+
+    private fun buttonsAndDispatchers() {
         requireActivity().onBackPressedDispatcher.addCallback(this) {
             findNavController().popBackStack()
+        }
+        binding.backIv.setOnClickListener {
+            findNavController().popBackStack()
+        }
+        binding.deleteIv.setOnClickListener{
+            sharedPreferences.deleteAllFood()
         }
     }
 }

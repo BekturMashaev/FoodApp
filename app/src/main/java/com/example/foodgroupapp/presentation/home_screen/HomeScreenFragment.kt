@@ -20,7 +20,7 @@ class HomeScreenFragment : Fragment(), ItemCLickListener {
         FragmentHomeScreenBinding.inflate(layoutInflater)
     }
     private val adapter: FoodAdapter by lazy {
-        FoodAdapter(this)
+        FoodAdapter(this,false)
     }
     private lateinit var viewModel: HomeScreenViewModel
     override fun onCreateView(

@@ -10,7 +10,8 @@ import com.example.foodgroupapp.data.databse.models.FoodModel
 import com.example.foodgroupapp.databinding.FoodItemBinding
 
 class FoodAdapter(
-    private val listener: ItemCLickListener
+    private val listener: ItemCLickListener,
+    private val isCart:Boolean
 ) : RecyclerView.Adapter<FoodAdapter.FoodViewHolder>() {
     private var foodList = mutableListOf<FoodModel>()
 
@@ -25,15 +26,25 @@ class FoodAdapter(
         RecyclerView.ViewHolder(binding.root) {
         fun bind(foodModel: FoodModel) {
             binding.apply {
-                foodNameTxt.text = foodModel.foodName
-                descriptionTxt.text = foodModel.foodDescription
-                priceTxt.text = "${foodModel.foodPrice}$"
-                itemCv.setOnClickListener {
-                    listener.onFoodItemClick(foodModel)
-                }
-                Glide.with(root).load(foodModel.foodImage).into(foodIv)
-                cartItemIv.setOnClickListener {
-                    listener.onIconClick(foodList.indexOf(foodModel))
+                if (isCart) {
+                    foodNameTxt.text = foodModel.foodName
+                    descriptionTxt.text = foodModel.foodDescription
+                    priceTxt.text = "${foodModel.foodPrice}$"
+                    itemCv.setOnClickListener {
+                        listener.onFoodItemClick(foodModel)
+                    }
+                    Glide.with(root).load(foodModel.foodImage).into(foodIv)
+                    cartItemIv.setOnClickListener {
+                        listener.onIconClick(foodList.indexOf(foodModel))
+                    }
+                }else{
+                    foodNameTxt.text = foodModel.foodName
+                    descriptionTxt.text = foodModel.foodDescription
+                    priceTxt.text = "${foodModel.foodPrice}$"
+                    itemCv.setOnClickListener {
+                        listener.onFoodItemClick(foodModel)
+                    }
+                    Glide.with(root).load(foodModel.foodImage).into(foodIv)
                 }
             }
         }

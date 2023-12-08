@@ -51,6 +51,9 @@ class ItemViewFragment : Fragment() {
         requireActivity().onBackPressedDispatcher.addCallback(this) {
             findNavController().popBackStack()
         }
+        binding.backIv.setOnClickListener {
+            findNavController().popBackStack()
+        }
     }
 
     private fun setUpStatusColors() {

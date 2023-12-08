@@ -46,6 +46,7 @@
             android:layout_width="85dp"
             android:layout_height="85dp"
             android:layout_gravity="center"
+            android:scaleType="centerCrop"
             android:layout_marginStart="50dp"
             android:src="@drawable/cake_image"/>
 
