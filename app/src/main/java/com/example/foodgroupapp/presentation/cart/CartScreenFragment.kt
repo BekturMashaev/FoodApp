@@ -15,6 +15,7 @@ import com.example.foodgroupapp.databinding.FragmentCartScreenBinding
 import com.example.foodgroupapp.presentation.adapter.FoodAdapter
 import com.example.foodgroupapp.presentation.adapter.ItemCLickListener
 import com.example.foodgroupapp.presentation.home_screen.HomeScreenFragment
+import com.google.android.material.dialog.MaterialAlertDialogBuilder
 
 class CartScreenFragment : Fragment(), ItemCLickListener {
     private val sharedPreferences: CartPreferences by lazy {
@@ -65,8 +66,20 @@ class CartScreenFragment : Fragment(), ItemCLickListener {
             findNavController().popBackStack()
         }
         binding.deleteIv.setOnClickListener{
+            showConfirmDialog()
+        }
+    }
+    private fun showConfirmDialog() {
+        val alterDialog = MaterialAlertDialogBuilder(requireContext())
+        alterDialog.setMessage(getString(R.string.delete_all_confirm_dialog))
+        alterDialog.setPositiveButton(getString(R.string.yes_txt)) { dialog, _ ->
             sharedPreferences.deleteAllFood()
             setUpViewsAndAdapter()
+            dialog.dismiss()
         }
+        alterDialog.setNegativeButton(getString(R.string.no_text)) { dialog, _ ->
+            dialog.dismiss()
+        }
+        alterDialog.create().show()
     }
 }

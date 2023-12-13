@@ -29,6 +29,7 @@ class HomeScreenFragment : Fragment(), ItemCLickListener {
         // Inflate the layout for this fragment
         return binding.root
     }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(
